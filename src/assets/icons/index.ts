@@ -1,4 +1,4 @@
-export { default as correct } from "./correct.svg";
+export { default as checked } from "./checked.svg";
 export { default as done } from "./done.svg";
 export { default as heart } from "./heart.svg";
 export { default as longArrowLeft } from "./long-arrow-left.png";

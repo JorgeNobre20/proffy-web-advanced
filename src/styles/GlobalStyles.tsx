@@ -5,7 +5,7 @@ const GlobalStyles = createGlobalStyle`
 		padding: 0;
 		margin: 0;
 		box-sizing: border-box;
-		font-family: Arial,sans-serif;
+		font-family: Poppins,sans-serif;
 	}
 
 	body{
@@ -16,11 +16,22 @@ const GlobalStyles = createGlobalStyle`
 	input, button {
 		background: none;
 		border: none;
-		outline: none;
+		outline: 0;
 	}
 
 	a{
 		text-decoration: none;
+	}
+
+	button{
+		cursor: pointer;
+	}
+
+	input:required {
+    box-shadow:none;
+	}
+	input:invalid {
+	    box-shadow:none;
 	}
 `;
 

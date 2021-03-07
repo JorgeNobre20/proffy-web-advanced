@@ -1,4 +1,5 @@
 import React, { useCallback, FormEvent, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import { MainContainer, Form } from "./styles";
 
@@ -12,6 +13,9 @@ import {
 } from "../../components";
 
 const Register: React.FC = () => {
+
+	const history = useHistory();
+
 	const [name, setName] = useState<string | null>("");
 	const [lastname, setLastname] = useState<string | null>("");
 	const [email, setEmail] = useState<string | null>("");
@@ -22,6 +26,7 @@ const Register: React.FC = () => {
 	function handleRegister(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault();
 		console.log("Register data -->", { name, lastname, email, password });
+		history.push({ pathname: "/success", state: { action: "@CreateUser" } });
 	}
 
 	const handleUpdateStateProperties = useCallback(

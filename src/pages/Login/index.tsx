@@ -1,9 +1,9 @@
 import React, { useState, useCallback, FormEvent } from "react";
+import { Link } from "react-router-dom";
 
 import {
 	MainContainer,
 	Form,
-	FormTitle,
 	FormFooter,
 	LoginSectionFooter,
 	CreateAccountContainer,
@@ -15,10 +15,9 @@ import {
 	CheckBox,
 	CheckedIcon,
 	ChekboxLabel,
-	LoginButton
 } from "./styles";
 
-import { AuthSection, CustomInput } from "../../components";
+import { AuthSection, CustomInput, AuthFormTitle, SubmitButton } from "../../components";
 
 const Login: React.FC = () => {
 	const [email, setEmail] = useState<string | null>(null);
@@ -61,7 +60,7 @@ const Login: React.FC = () => {
 
 			<AuthSection>
 				<Form onSubmit={handleLogin}>
-					<FormTitle>Fazer Login</FormTitle>
+					<AuthFormTitle title="Fazer Login" hasDescription={false} />
 				
 					<CustomInput 
 						statePropertyName={"email"}
@@ -96,19 +95,18 @@ const Login: React.FC = () => {
 						<ForgotPassword>Esqueci minha senha</ForgotPassword>
 					</FormFooter>
 
-					<LoginButton
+					<SubmitButton
 						type={ email && password ? "submit" : "button" }
 						isValidForm={email && password ? true : false}
-					>
-						Entrar
-					</LoginButton>
+						label="Entrar"
+					/>
 				</Form>
 
 				<LoginSectionFooter>
 					<CreateAccountContainer>
 						<CreateAccountText>
 							Não tem conta? <br />
-							<a href="/">Cadastra-se</a>
+							<Link to="/register">Cadastra-se</Link>
 						</CreateAccountText>
 					</CreateAccountContainer>
 

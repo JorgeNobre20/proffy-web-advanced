@@ -14,7 +14,7 @@ import {
 interface Props extends InputHTMLAttributes<HTMLInputElement>{
 	statePropertyName: string;
 	statePropertyValue: string;
-	borderRadius: BorderRadius;
+	borderRadius?: BorderRadius;
 	fieldRef: string;
 	fieldType: string;
 	fieldLabel: string;
@@ -41,6 +41,7 @@ const CustomInput: React.FC<Props> = ({
 
 		if(target){
 			const { name, value } = target;
+			console.log("atualizando");
 			handleUpdateState(name, value);
 		}
 
@@ -57,7 +58,7 @@ const CustomInput: React.FC<Props> = ({
 	return (
 		<InputContainer
 			refValue={statePropertyValue}
-			radius={borderRadius}
+			radius={borderRadius ?? { topLeft: "0px", topRight: "0px", bottomLeft: "0px", bottomRight: "0px",  }}
 		>
 			<InputFocusMarker />
 			<Label htmlFor={fieldRef}>{fieldLabel}</Label>

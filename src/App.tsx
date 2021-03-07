@@ -4,13 +4,13 @@ import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
 import GlobalStyles from "./styles/GlobalStyles";
 
-import Login from "./pages/Login";
+import Routes from "./routes";
 
 const App: React.FC = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
-			<Login />
+			<Routes />
 		</ThemeProvider>
 	);
 };

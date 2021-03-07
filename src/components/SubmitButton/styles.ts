@@ -1,10 +1,6 @@
-import styled,{ css } from "styled-components";
+import styled from "styled-components";
 
-const fullFlex = css`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
+import { fullFlex } from "../../styles/GlobalStyles";
 
 export const Button = styled.button<{ isValidForm: boolean; }>`
 	${fullFlex};
@@ -18,4 +14,9 @@ export const Button = styled.button<{ isValidForm: boolean; }>`
 	border-radius: 8px;
 	margin-bottom: 2rem;
 	cursor: ${({ isValidForm }) => isValidForm ? "pointer" : "no-drop" };
+	transition: background 0.4s;
+
+	&:hover{
+		background: ${({ theme, isValidForm }) => isValidForm ? theme.colors.hoverGreen : theme.colors.disabled };		
+	}
 `;

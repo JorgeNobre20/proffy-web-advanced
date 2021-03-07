@@ -10,9 +10,9 @@ const theme = {
 		disabled: "#DCDCE5",
 		textBase: "#6A6180",
 		white: "#FFFFFF",
-		purpleBase: "#D4C2FF",
-		greenHover: "#04BF58",
-		purpleHover: "#774FD1"
+		basePurple: "#D4C2FF",
+		hoverGreen: "#04BF58",
+		hoverPurple: "#774FD1"
 	}
 };
 export default theme;

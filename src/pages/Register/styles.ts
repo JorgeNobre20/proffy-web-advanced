@@ -1,10 +1,6 @@
-import styled,{ css } from "styled-components";
+import styled from "styled-components";
 
-const fullFlex = css`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
+import { fullFlex } from "../../styles/GlobalStyles";
 
 export const MainContainer = styled.main`
 	width: 100%;

@@ -1,13 +1,9 @@
-import styled,{ css } from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import { checked, heart } from "../../assets/icons";
 
-const fullFlex = css`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
+import { fullFlex } from "../../styles/GlobalStyles";
 
 export const MainContainer = styled.main`
 	width: 100%;

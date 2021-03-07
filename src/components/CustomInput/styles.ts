@@ -1,11 +1,7 @@
 import styled,{ css } from "styled-components";
 import { normalEye, outlinedEye } from "../../assets/icons";
 
-const fullFlex = css`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
+import { fullFlex } from "../../styles/GlobalStyles";
 
 export interface BorderRadius{
 	topLeft?: string;

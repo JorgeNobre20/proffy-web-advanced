@@ -1,4 +1,5 @@
 import React,{ useCallback, useState, FormEvent } from "react";
+import { useHistory } from "react-router-dom";
 
 import {
 	AuthSection,
@@ -13,12 +14,15 @@ import { MainContainer, Form } from "./styles";
 
 const ForgotPassword: React.FC = () => {
 
+	const history = useHistory();
+
 	const [email, setEmail] = useState<string | null>("");
 
 	function handleRecoveryPassword(event: FormEvent<HTMLFormElement>){
 		event.preventDefault();
 		const data = { email };
 		console.log("Forgot Password Data -->", data);
+		history.push({ pathname: "/success", state: { action: "@PasswordRecovery" } })
 	}
 
 	const handleUpdateStateProperties = useCallback(

@@ -1,12 +1,7 @@
-import styled,{ css } from "styled-components";
+import styled from "styled-components";
 import { introductionLogo } from "../../assets/images";
 
-const fullFlex = css`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
-
+import { fullFlex } from "../../styles/GlobalStyles";
 
 export const Container = styled.section<{ isLogoContainer?: boolean; }>`
 	width: 50%;

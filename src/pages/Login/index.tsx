@@ -1,5 +1,5 @@
 import React, { useState, useCallback, FormEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import {
 	MainContainer,
@@ -25,6 +25,8 @@ import {
 } from "../../components";
 
 const Login: React.FC = () => {
+	const history = useHistory();
+
 	const [email, setEmail] = useState<string | null>(null);
 	const [password, setPassword] = useState<string | null>(null);
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -38,6 +40,7 @@ const Login: React.FC = () => {
 		event.preventDefault();
 		const data = { email, password };
 		console.log("Login Data -->", data);
+		history.push({ pathname: "/success", state: { action: "@CreateUser" } });
 	}
 
 	function handleCheckBox() {

@@ -1,11 +1,7 @@
-import styled,{ css } from "styled-components";
+import styled from "styled-components";
 import { longArrowLeft } from "../../assets/icons";
 
-const fullFlex = css`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
+import { fullFlex } from "../../styles/GlobalStyles";
 
 export const PageHeader = styled.header`
 	width: 50%;

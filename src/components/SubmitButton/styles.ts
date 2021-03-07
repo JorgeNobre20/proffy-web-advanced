@@ -16,6 +16,6 @@ export const Button = styled.button<{ isValidForm: boolean; }>`
 	font-size: 1rem;
 	font-weight: 500;
 	border-radius: 8px;
-	margin: 2rem 0;
+	margin-bottom: 2rem;
 	cursor: ${({ isValidForm }) => isValidForm ? "pointer" : "no-drop" };
 `;

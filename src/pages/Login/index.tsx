@@ -14,10 +14,15 @@ import {
 	CheckBoxContainer,
 	CheckBox,
 	CheckedIcon,
-	ChekboxLabel,
+	ChekboxLabel
 } from "./styles";
 
-import { AuthSection, CustomInput, AuthFormTitle, SubmitButton } from "../../components";
+import {
+	AuthSection,
+	CustomInput,
+	AuthFormTitle,
+	SubmitButton
+} from "../../components";
 
 const Login: React.FC = () => {
 	const [email, setEmail] = useState<string | null>(null);
@@ -29,7 +34,7 @@ const Login: React.FC = () => {
 		setIsPasswordVisible((prevState) => !prevState);
 	}, []);
 
-	function handleLogin(event: FormEvent<HTMLFormElement>){
+	function handleLogin(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault();
 		const data = { email, password };
 		console.log("Login Data -->", data);
@@ -60,9 +65,12 @@ const Login: React.FC = () => {
 
 			<AuthSection>
 				<Form onSubmit={handleLogin}>
-					<AuthFormTitle title="Fazer Login" hasDescription={false} />
-				
-					<CustomInput 
+					<AuthFormTitle
+						content={<span>Fazer Login</span>}
+						hasDescription={false}
+					/>
+
+					<CustomInput
 						statePropertyName={"email"}
 						handleUpdateState={handleUpdateStateProperties}
 						statePropertyValue={email ?? ""}
@@ -72,7 +80,7 @@ const Login: React.FC = () => {
 						fieldLabel={"E-mail"}
 					/>
 
-					<CustomInput 
+					<CustomInput
 						statePropertyName={"password"}
 						handleUpdateState={handleUpdateStateProperties}
 						statePropertyValue={password ?? ""}
@@ -96,7 +104,8 @@ const Login: React.FC = () => {
 					</FormFooter>
 
 					<SubmitButton
-						type={ email && password ? "submit" : "button" }
+						style={{ marginTop: "0.4rem" }}
+						type={email && password ? "submit" : "button"}
 						isValidForm={email && password ? true : false}
 						label="Entrar"
 					/>

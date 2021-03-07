@@ -1,27 +1,17 @@
 import React, { useCallback, FormEvent, useState } from "react";
-import { useHistory } from "react-router-dom";
 
-import {
-	MainContainer,
-	Form,
-	FormDescription,
-	PageHeader,
-	GoBackButton,
-	GoBackIcon
-} from "./styles";
+import { MainContainer, Form } from "./styles";
 
 import {
 	AuthSection,
 	AuthFormTitle,
+	AuthFormDescription,
 	SubmitButton,
-	CustomInput
+	CustomInput,
+	AuthFormHeader
 } from "../../components";
 
-
 const Register: React.FC = () => {
-
-	const history = useHistory();
-
 	const [name, setName] = useState<string | null>("");
 	const [lastname, setLastname] = useState<string | null>("");
 	const [email, setEmail] = useState<string | null>("");
@@ -29,12 +19,13 @@ const Register: React.FC = () => {
 
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-	function handleRegister(event: FormEvent<HTMLFormElement>){
+	function handleRegister(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault();
 		console.log("Register data -->", { name, lastname, email, password });
 	}
 
-	const handleUpdateStateProperties = useCallback((statePropertyName: string, newValue: string) => {
+	const handleUpdateStateProperties = useCallback(
+		(statePropertyName: string, newValue: string) => {
 			switch (statePropertyName) {
 				case "name":
 					setName(newValue);
@@ -43,7 +34,7 @@ const Register: React.FC = () => {
 				case "lastname":
 					setLastname(newValue);
 					break;
-				
+
 				case "email":
 					setEmail(newValue);
 					break;
@@ -52,32 +43,29 @@ const Register: React.FC = () => {
 					setPassword(newValue);
 					break;
 			}
-		},[]
+		},
+		[]
 	);
 
 	const handlePasswordVisibility = useCallback(() => {
 		setIsPasswordVisible((prevState) => !prevState);
 	}, []);
 
-	function handleGoBack(){
-		history.goBack();
-	}
-
 	return (
 		<MainContainer>
 			<AuthSection>
-				<PageHeader>
-					<GoBackButton onClick={handleGoBack}>
-						<GoBackIcon />
-					</GoBackButton>
-				</PageHeader>
+				<AuthFormHeader />
 
 				<Form onSubmit={handleRegister}>
-					<AuthFormTitle hasDescription title="Cadastro" />
-					<FormDescription>
-						Preencha os dados abaixo <br />
-						para começar.
-					</FormDescription>
+					<AuthFormTitle hasDescription content={<span>Cadastro</span>} />
+					<AuthFormDescription
+						content={
+							<span>
+								Preencha os dados abaixo <br />
+								para começar.
+							</span>
+						}
+					/>
 
 					<CustomInput
 						statePropertyName={"name"}
@@ -120,8 +108,9 @@ const Register: React.FC = () => {
 					/>
 
 					<SubmitButton
+						style={{ marginTop: "2rem" }}
 						isValidForm={email && password && lastname && name ? true : false}
-						label={"Cadastar"}
+						label={"Concluir cadastro"}
 						type={email && password && lastname && name ? "submit" : "button"}
 					/>
 				</Form>

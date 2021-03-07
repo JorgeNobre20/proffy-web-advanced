@@ -41,7 +41,6 @@ const CustomInput: React.FC<Props> = ({
 
 		if(target){
 			const { name, value } = target;
-			console.log("atualizando");
 			handleUpdateState(name, value);
 		}
 

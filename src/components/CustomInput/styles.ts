@@ -26,7 +26,7 @@ export const InputContainer = styled.div<{ radius: BorderRadius; refValue: strin
 	justify-content: space-between;
 	align-items: center;
 	background: ${({ theme }) => theme.colors.inputBg};
-	height: 3.8rem;
+	height: 4rem;
 	width: 100%;
 	border: 0.5px solid ${({ theme }) => theme.colors.inputBorderColor};
 	border-top-left-radius: ${ ({ radius }) => radius.topLeft ? radius.topLeft : "0px"  };

@@ -1,4 +1,6 @@
 import styled,{ css } from "styled-components";
+import { Link } from "react-router-dom";
+
 import { checked, heart } from "../../assets/icons";
 
 const fullFlex = css`
@@ -66,10 +68,10 @@ export const FormFooter = styled.footer`
 	justify-content: space-between;
 	align-items: center;
 	font-family: Poppins;
-	margin: 1.5rem 0;
+	margin-top: 1.5rem;
 `;
 
-export const ForgotPassword = styled.span`
+export const ForgotPassword = styled(Link).attrs({ to: "/forgot-password" })`
 	font-size: 0.9rem;
 	margin-right: 0.5rem;
 	font-weight: 400;

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
 
 const Routes: React.FC = () => {
 	return (
@@ -10,6 +11,7 @@ const Routes: React.FC = () => {
 			<Switch>
 				<Route path="/login" component={Login}/>
 				<Route path="/register" component={Register}/>
+				<Route path="/forgot-password" component={ForgotPassword}/>
 			</Switch>
 		</BrowserRouter>
 	);

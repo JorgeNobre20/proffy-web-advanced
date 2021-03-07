@@ -22,6 +22,7 @@ export const Container = styled.section<{ isLogoContainer?: boolean; }>`
 
 	@media(max-width: 768px){
 		flex-direction: column;
+		order: ${props => props.isLogoContainer ? "1" : "2"};
 		height: ${ props => props.isLogoContainer ? "15rem" : "auto" };
 		width: 100%;
 		min-height: 0px;

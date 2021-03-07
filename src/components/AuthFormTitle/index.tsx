@@ -1,14 +1,19 @@
-import React from "react";
+import React,{ ReactNode } from "react";
 
 import { FormTitleWrapper } from "./styles";
 
 interface Props{
-	title: string;
+	content: ReactNode;
 	hasDescription?: boolean;
 }
 
-const FormTitle: React.FC<Props> = ({ title, hasDescription }) => {
-	return <FormTitleWrapper hasDescription={hasDescription ?? false} >{title}</FormTitleWrapper>
+const FormTitle: React.FC<Props> = ({ content, hasDescription }) => {
+	return (
+		<FormTitleWrapper 
+			hasDescription={hasDescription ?? false} >
+			{content}
+		</FormTitleWrapper>
+	)
 }
 
 export default FormTitle;

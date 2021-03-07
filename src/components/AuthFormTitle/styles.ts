@@ -7,7 +7,8 @@ export const FormTitleWrapper = styled.h1<{ hasDescription: boolean; }>`
 	color: ${({ theme }) => theme.colors.titleText};
 	margin-bottom: ${ props => props.hasDescription ? "0.8rem" : "1.6rem" };
 
-	@media(max-width: 450px){
+	@media(max-width: 780px){
 		text-align: center;
 	}
+
 `;

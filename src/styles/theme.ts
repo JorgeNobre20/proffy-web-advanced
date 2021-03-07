@@ -9,7 +9,10 @@ const theme = {
 		complementText: "#9C98A6",
 		disabled: "#DCDCE5",
 		textBase: "#6A6180",
-		white: "#FFFFFF"
+		white: "#FFFFFF",
+		purpleBase: "#D4C2FF",
+		greenHover: "#04BF58",
+		purpleHover: "#774FD1"
 	}
 };
 export default theme;

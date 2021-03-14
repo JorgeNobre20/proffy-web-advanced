@@ -6,7 +6,7 @@ import { homeLogo, homeHero } from "../../assets/images";
 
 
 export const MainContainer = styled.main`
-	height: 100vh;
+	min-height: 100vh;
 	width: 100%;
 	background: ${props => props.theme.colors.background};
 `;
@@ -20,6 +20,19 @@ export const HeroSection = styled.section`
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+
+	@media(max-width: 980px){
+		padding: 0 2.3rem;
+	}
+
+	@media(max-width: 932px){
+		padding: 0 2.3rem;
+	}
+
+	@media(max-width: 450px){
+			height: 60vh;
+			min-height: 20rem;
+	}
 `;
 
 export const Header = styled.header`
@@ -75,6 +88,18 @@ export const HeroContainer = styled.div`
 	height: 100%;
 	position: relative;
 	width: 100%;
+
+	@media(max-width: 932px){
+
+		> div{
+			width: 100%;
+			height: 100%;
+		}
+
+		div: nth-child(2){
+			display: none;
+		}
+	}
 `;
 
 export const ImageContainer = styled.div<{ isHeroContainer?: boolean }>`
@@ -84,12 +109,25 @@ export const ImageContainer = styled.div<{ isHeroContainer?: boolean }>`
 	height: 100%;
 
 	justify-content: ${props => props.isHeroContainer ? "flex-end" : "flex-start"};
+
+
+	@media(max-width: 932px){
+		width: 100%;
+		height: 100%;
+
+		justify-content: center;
+	}
 `;
 
 const mainImages = css`
 	position: relative;
 	height: auto;
 	display: flex;
+
+	@media(max-width: 932px){
+		height: auto;
+		width: 70%;
+	}
 `;
 
 export const HomeLogo = styled.img.attrs({
@@ -114,8 +152,23 @@ export const PageFooter = styled.footer`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 30vh;
+	min-height: 30vh;
 	padding: 0 4.5rem;
+	
+	@media(max-width: 980px){
+		padding: 0 2.3rem;
+	}
+
+	@media(max-width: 932px){
+		padding: 1rem 2.3rem;
+		flex-direction: column;
+	}
+
+	@media(max-width: 450px){
+		padding: 0 0.8rem;
+		padding-top: 1rem;
+	}
+
 `;
 
 export const FooterTitle = styled.h1`
@@ -123,16 +176,33 @@ export const FooterTitle = styled.h1`
 	color: ${props => props.theme.colors.textBase};
 	line-height: 1.8rem;
 
-	h2{
-		font-weight: 400;
-		font-size: 1.1rem;
-		margin: 0;
+		h2{
+			font-weight: 400;
+			font-size: 1.1rem;
+			margin: 0;
+		}
+
+		strong{
+			font-size: 1.4rem;
+			margin: 0;
+		}
+
+	@media(max-width: 1150px){
+		h2{
+			font-size: 1rem;
+		}
+
+		strong{
+			font-size: 1.2rem;
+		}
 	}
 
-	strong{
-		font-size: 1.4rem;
-		margin: 0;
+	@media(max-width: 932px){
+		text-align: center;
+		margin: 1rem 0;
 	}
+
+
 
 `;
 
@@ -140,6 +210,21 @@ export const UserActions = styled.div`
 	${fullFlex};
 	position: relative;
 	height: 100%;
+	margin-left: 2rem;
+
+	@media(max-width: 932px){
+		width: 100%;
+		flex-direction: column;
+		margin: 0;
+
+		div{
+			order: 1;
+		}
+
+		div:first-child{
+			order: 2;
+		}
+	}
 `;
 
 export const ConnectionsTotal = styled.div`
@@ -155,6 +240,14 @@ export const ConnectionsTotal = styled.div`
 	span{
 		${fullFlex};
 	}
+
+	@media(max-width: 932px){
+		justify-content: center;
+		${fullFlex};
+		margin: 1.3rem 0;
+		margin-right: 0;
+	}	
+
 `;
 
 export const HeartIcon = styled.img.attrs({
@@ -170,14 +263,19 @@ export const ButtonsContainer = styled.div`
 	${fullFlex};
 	position: relative;
 	height: 100%;
+
+	@media(max-width: 932px){
+		width: 100%;
+		margin-top: 1rem;
+	}
 `;
 
 const buttonStyle = css`
 	${fullFlex};
 	position: relative;
-	padding: 1rem;
+	padding: 1.3rem;
 	height: 50%;
-	width: 15rem;
+	width: 20vw;
 	cursor: pointer;
 	border-radius: 10px;
 	font-weight: bold;
@@ -201,21 +299,56 @@ export const StudyButton = styled.button`
 	&:hover{
 		background: ${props => props.theme.colors.hoverPurple}
 	}
+
+	@media(max-width: 932px){
+		width: 48%;
+	}
+
+	@media(max-width: 450px){
+		font-size: 1.1rem;
+	}
 `;
 
 export const StudyIcon = styled.img.attrs({ src: study, alt: "Livro" })`
 	${buttonIconStyle};
+
+	@media(max-width: 932px){
+		margin-right: 0.5rem;
+	}
+
+	@media(max-width: 450px){
+		height: 1.2rem;
+	}
 `;
 
 export const GiveClassesButton = styled.button`
 	background: ${props => props.theme.colors.green};
 	${buttonStyle};
 
+
 	&:hover{
 		background: ${props => props.theme.colors.hoverGreen}
+	}
+
+	@media(max-width: 932px){
+		width: 48%;
+		font-size: 1.1rem;
+	}
+
+	@media(max-width: 450px){
+		font-size: 1.1rem;
 	}
 `;
 
 export const GiveClassesIcon = styled.img.attrs({ src: giveClasses, alt: "TV" })`
 	${buttonIconStyle};
+
+
+	@media(max-width: 932px){
+		margin-right: 0.5rem;
+	}
+
+	@media(max-width: 450px){
+		height: 1.2rem;
+	}
 `;

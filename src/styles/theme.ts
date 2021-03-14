@@ -12,7 +12,8 @@ const theme = {
 		white: "#FFFFFF",
 		basePurple: "#D4C2FF",
 		hoverGreen: "#04BF58",
-		hoverPurple: "#774FD1"
+		hoverPurple: "#774FD1",
+		lightPurple: "#774DD6"
 	}
 };
 export default theme;

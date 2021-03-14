@@ -25,7 +25,6 @@ import {
 } from "../../components";
 
 const Login: React.FC = () => {
-
 	const [email, setEmail] = useState<string | null>(null);
 	const [password, setPassword] = useState<string | null>(null);
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -130,4 +129,4 @@ const Login: React.FC = () => {
 	);
 };
 
-export default Login;
+export { Login };

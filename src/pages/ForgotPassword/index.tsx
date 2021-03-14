@@ -1,4 +1,4 @@
-import React,{ useCallback, useState, FormEvent } from "react";
+import React, { useCallback, useState, FormEvent } from "react";
 import { useHistory } from "react-router-dom";
 
 import {
@@ -13,21 +13,23 @@ import {
 import { MainContainer, Form } from "./styles";
 
 const ForgotPassword: React.FC = () => {
-
 	const history = useHistory();
 
 	const [email, setEmail] = useState<string | null>("");
 
-	function handleRecoveryPassword(event: FormEvent<HTMLFormElement>){
+	function handleRecoveryPassword(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault();
 		const data = { email };
 		console.log("Forgot Password Data -->", data);
-		history.push({ pathname: "/success", state: { action: "@PasswordRecovery" } })
+		history.push({
+			pathname: "/success",
+			state: { action: "@PasswordRecovery" }
+		});
 	}
 
 	const handleUpdateStateProperties = useCallback(
 		(statePropertyName: string, newValue: string) => {
-			if(statePropertyName === "email"){
+			if (statePropertyName === "email") {
 				setEmail(newValue);
 			}
 		},
@@ -52,24 +54,27 @@ const ForgotPassword: React.FC = () => {
 					<AuthFormDescription
 						content={<span>Não esquenta, vamos dar um jeito nisso</span>}
 					/>
-					
 
-					<CustomInput 
+					<CustomInput
 						statePropertyName={"email"}
 						handleUpdateState={handleUpdateStateProperties}
 						statePropertyValue={email ?? ""}
-						borderRadius={{ topLeft: "8px", topRight: "8px", bottomLeft: "8px", bottomRight: "8px" }}
+						borderRadius={{
+							topLeft: "8px",
+							topRight: "8px",
+							bottomLeft: "8px",
+							bottomRight: "8px"
+						}}
 						fieldRef={"email"}
 						fieldType={"email"}
 						fieldLabel={"E-mail"}
 					/>
 
-					<SubmitButton 
+					<SubmitButton
 						style={{ marginTop: "2rem" }}
 						isValidForm={email ? true : false}
 						label="Enviar"
 					/>
-
 				</Form>
 			</AuthSection>
 			<AuthSection isLogoContainer />
@@ -77,4 +82,4 @@ const ForgotPassword: React.FC = () => {
 	);
 };
 
-export default ForgotPassword;
+export { ForgotPassword };

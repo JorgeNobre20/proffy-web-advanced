@@ -13,7 +13,6 @@ import {
 } from "../../components";
 
 const Register: React.FC = () => {
-
 	const history = useHistory();
 
 	const [name, setName] = useState<string | null>("");
@@ -126,4 +125,4 @@ const Register: React.FC = () => {
 	);
 };
 
-export default Register;
+export { Register };
